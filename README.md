@@ -24,7 +24,7 @@ Database access will be done using the `db.js` file included inside the `data` f
 [x] `findById()`: this method expects an `id` as it's only parameter and returns the user corresponding to the `id` provided or an empty array if no user with that `id` is found.
 [x] `insert()`: calling insert passing it a user object will add it to the database and return an object with the `id` of the inserted user. The object looks like this: `{ id: 123 }`.
 [x] `update()`: accepts two arguments, the first is the `id` of the user to update and the second is an object with the `changes` to apply. It returns the count of updated records. If the count is 1 it means the record was updated correctly.
-- `remove()`: the remove method accepts an `id` as it's first parameter and upon successfully deleting the user from the database it returns the number of records deleted.
+[x] `remove()`: the remove method accepts an `id` as it's first parameter and upon successfully deleting the user from the database it returns the number of records deleted.
 
 Now that we have a way to add, update, remove and retrieve data from the provided database, it is time to work on the API.
 
@@ -97,12 +97,12 @@ When the client makes a `GET` request to `/api/users/:id`:
 
 When the client makes a `DELETE` request to `/api/users/:id`:
 
-- If the _user_ with the specified `id` is not found:
+[x] If the _user_ with the specified `id` is not found:
 
   - respond with HTTP status code `404` (Not Found).
   - return the following JSON object: `{ message: "The user with the specified ID does not exist." }`.
 
-- If there's an error in removing the _user_ from the database:
+[x] If there's an error in removing the _user_ from the database:
   - respond with HTTP status code `500`.
   - return the following JSON object: `{ errorMessage: "The user could not be removed" }`.
 
