@@ -41,7 +41,8 @@ server.get('/api/users/:id', (req, res) => {
             }
         })
         .catch(err => {
-            res.status(500).json({ succes: false, err, errorMessage: "The user information could not be retrieved." });
+            console.log(`Error on geg findById`, err);
+            res.status(500).json({ success: false, errorMessage: "The user information could not be retrieved." });
         });
 });
 
@@ -63,7 +64,7 @@ server.post('/api/users', (req, res) => {
             res.status(201).json({ success: true, addUser })
         })
         .catch(err => {
-            res.status(500).json({ success: false, err, errorMessage: "There was an error while saving the user to the database" })
+            res.status(500).json({ success: false, errorMessage: "There was an error while saving the user to the database" })
         })
 
 })
@@ -89,7 +90,7 @@ server.put('/api/users/:id', (req, res) => {
             }
         })
         .catch(err => {
-            res.status(500).json({ success: false, err, errorMessage: "The user information could not be modified." })
+            res.status(500).json({ success: false, errorMessage: "The user information could not be modified." })
         })
 
 })
